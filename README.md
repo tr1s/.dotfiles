@@ -11,8 +11,6 @@ A place to keep my dotfiles.
 
 This next section below is taken from [Patrick McDonald](https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds/blob/master/README.md) – take [his course](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish/) to get a better understanding of all of this.
 
----
-
 ## Steps to bootstrap a new Mac
 
 1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew.
