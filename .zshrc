@@ -17,7 +17,8 @@ export ZSH=$HOME/.oh-my-zsh
 
 # ZSH_THEME="sunrise"
 # ZSH_THEME="edvardm"
-ZSH_THEME="minimal"
+# ZSH_THEME="minimal"
+ZSH_THEME="clean"
 
 #------------------
 # Plugins
