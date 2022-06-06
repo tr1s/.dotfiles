@@ -81,8 +81,10 @@ alias clean="gatsby clean"
 unsetopt PROMPT_SP
 
 # Allows Ruby(rbenv) & colorls to work, ref below
-# https://stackoverflow.com/questions/58303940/macos-catalina-error-after-update-unable-to-run-colorls/58310557#58310557
+# Ref 1: https://stackoverflow.com/questions/58303940/macos-catalina-error-after-update-unable-to-run-colorls/58310557#58310557
+# Ref 2: https://github.com/rbenv/rbenv/issues/1217#issuecomment-868565280
 eval "$(rbenv init -)"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 
 # https://github.com/nvbn/thefuck
