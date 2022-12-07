@@ -1,8 +1,3 @@
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
 [user]
 	name = Tristan Lawrence
 	email = trislaw@gmail.com
@@ -24,3 +19,8 @@
   lall     = log --oneline --decorate --graph --all
   ls       = log --oneline --decorate --graph --stat
   lt       = log --graph --decorate --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset'
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

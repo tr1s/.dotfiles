@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -63,13 +63,18 @@ alias bb='brew update; brew upgrade; brew cleanup; brew doctor'
 alias c="clear"
 alias code="code"
 alias nd="npm run dev"
+alias cnd="code . && npm run dev"
 alias ned="netlify dev"
 alias nedl="netlify dev --live"
 alias bl="brew list"
 alias l="colorls --group-directories-first --almost-all"
 alias ll="colorls --group-directories-first --almost-all --long"
 alias updatepackages="npx npm-check-updates -u"
+alias updatenpm="nvm install-latest-npm"
 alias clean="gatsby clean"
+# LOL don't be Jamon.
+# https://twitter.com/jamonholmgren/status/967548502648668161
+alias rm="trash"
 
 
 #------------------
@@ -86,9 +91,5 @@ unsetopt PROMPT_SP
 eval "$(rbenv init -)"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
-
-# https://github.com/nvbn/thefuck
-eval $(thefuck --alias)
-
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
