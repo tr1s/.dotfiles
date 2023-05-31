@@ -1,5 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -27,7 +28,7 @@ ZSH_THEME="clean"
 
 plugins=(git zsh-nvm zsh-syntax-highlighting z)
 
-# why is this here? What are the consequences of things being before or after here?
+# Why is this here? What are the consequences of things being before or after here?
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -35,7 +36,7 @@ source $ZSH/oh-my-zsh.sh
 #------------------
 # Shell Variables
 #------------------
-# how does this work? how do you know to choose code-insiders and not vscode-whatever
+# How does this work? how do you know to choose code-insiders and not vscode-whatever?
 export EDITOR=code
 
 # Set the tab title to the current working directory before each prompt
@@ -61,6 +62,8 @@ add-zsh-hook precmd tabTitle
 alias update="source ~/.zshrc"
 alias bb='brew update; brew upgrade; brew cleanup; brew doctor'
 alias c="clear"
+alias ci="code-insiders"
+alias codei="code-insiders"
 alias code="code"
 alias nd="npm run dev"
 alias cnd="code . && npm run dev"
@@ -72,10 +75,9 @@ alias ll="colorls --group-directories-first --almost-all --long"
 alias updatepackages="npx npm-check-updates -u"
 alias updatenpm="nvm install-latest-npm"
 alias clean="gatsby clean"
-# LOL don't be Jamon.
+# LOL don't be Jamon and `brew install trash`
 # https://twitter.com/jamonholmgren/status/967548502648668161
 alias rm="trash"
-
 
 #------------------
 # Miscellaneous
@@ -85,11 +87,11 @@ alias rm="trash"
 # Ref = https://github.com/zeit/hyper/issues/2144#issuecomment-326741620
 unsetopt PROMPT_SP
 
-# Allows Ruby(rbenv) & colorls to work, ref below
-# Ref 1: https://stackoverflow.com/questions/58303940/macos-catalina-error-after-update-unable-to-run-colorls/58310557#58310557
-# Ref 2: https://github.com/rbenv/rbenv/issues/1217#issuecomment-868565280
-eval "$(rbenv init -)"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# rbenv (ruby)
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
+
+# Enable tab completion for flags
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
