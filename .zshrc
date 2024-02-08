@@ -84,10 +84,6 @@ alias rm="trash"
 # Miscellaneous
 #------------------
 
-# Stops the percentage sign from appearing on first load in hyper
-# Ref = https://github.com/zeit/hyper/issues/2144#issuecomment-326741620
-unsetopt PROMPT_SP
-
 # rbenv (ruby)
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
