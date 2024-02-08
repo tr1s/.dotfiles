@@ -1,5 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -94,5 +94,5 @@ eval "$(~/.rbenv/bin/rbenv init - zsh)"
 # Enable tab completion for flags
 source $(dirname $(gem which colorls))/tab_complete.sh
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
