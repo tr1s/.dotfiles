@@ -1,6 +1,6 @@
-# ~/.dotfiles
+# `~/.dotfiles`
 
-This directory is designated to store my macOS `/.dotfiles`.
+This directory is designated to store my macOS `$HOME/.dotfiles`
 
 ## Requirements
 
@@ -14,7 +14,7 @@ brew install stow
 
 ## Installation
 
-First, check out the dotfiles repo in your _$HOME_ directory using git
+First, check out the dotfiles repo in your `$HOME` directory using git
 
 ```
 $ git clone git@github.com/tr1s/.dotfiles.git
