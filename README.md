@@ -1,6 +1,6 @@
 # ~/.dotfiles
 
-This directory is designated to store my personal macOS `$HOME/.dotfiles`.
+This directory is designated to store my personal macOS `$HOME/.dotfiles`
 
 ## Requirements
 
