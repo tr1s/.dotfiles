@@ -1,6 +1,6 @@
 # ~/.dotfiles
 
-This directory is designated to store my personal macOS `$HOME/.dotfiles`
+This directory is designated to store my personal macOS `$HOME/.dotfiles`.
 
 ## Requirements
 
@@ -21,13 +21,13 @@ git clone git@github.com/tr1s/.dotfiles.git
 cd .dotfiles
 ```
 
-then use GNU stow to create symlinks
+then use **GNU Stow** to create symlinks
 
 ```
 stow .
 ```
 
-If there's an error saying:
+If there's an error saying
 
 ```
 WARNING! unstowing folderName would cause conflicts:
@@ -40,9 +40,9 @@ then run the following command to remove the `.DS_Store` files from the `.dotfil
 find .dotfiles -name ".DS_Store" -depth -exec rm -f {} \;
 ```
 
-Learn more—like how to use a custom ignore list, or handle conflicting files—by checkout out **Dreams of Autonomy's** [video](https://youtu.be/y6XCebnB9gs) on the subject
-
 ## Relevant links
+
+Learn more—like how to use a custom ignore list, or handle conflicting files—by checkout out **Dreams of Autonomy's** [video on the GNU Stow](https://youtu.be/y6XCebnB9gs).
 
 - [Stow has forever changed the way I manage my dotfiles](https://youtu.be/y6XCebnB9gs)
 - [~/.dotfiles in 100 Seconds](https://youtu.be/r_MpUP6aKiQ)
