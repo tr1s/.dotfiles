@@ -89,7 +89,7 @@ alias rm="trash"
 unsetopt PROMPT_SP
 
 # rbenv (ruby)
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Enable tab completion for flags
 source $(dirname $(gem which colorls))/tab_complete.sh
