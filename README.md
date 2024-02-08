@@ -1,6 +1,6 @@
-# `~/.dotfiles`
+# ~/.dotfiles
 
-This directory is designated to store my macOS `$HOME/.dotfiles`
+This directory is designated to store my personal macOS `$HOME/.dotfiles`
 
 ## Requirements
 
@@ -17,14 +17,14 @@ brew install stow
 First, check out the dotfiles repo in your `$HOME` directory using git
 
 ```
-$ git clone git@github.com/tr1s/.dotfiles.git
-$ cd .dotfiles
+git clone git@github.com/tr1s/.dotfiles.git
+cd .dotfiles
 ```
 
 then use GNU stow to create symlinks
 
 ```
-$ stow .
+stow .
 ```
 
 If there's an error saying:
@@ -40,9 +40,7 @@ then run the following command to remove the `.DS_Store` files from the `.dotfil
 find .dotfiles -name ".DS_Store" -depth -exec rm -f {} \;
 ```
 
-Learn more—like how to use a custom ignore list, or handle conflicting files— by checkout out Dreams of Autonomy's video on the subject:
-
-- [Stow has forever changed the way I manage my dotfiles](https://youtu.be/y6XCebnB9gs)
+Learn more—like how to use a custom ignore list, or handle conflicting files—by checkout out **Dreams of Autonomy's** [video](https://youtu.be/y6XCebnB9gs) on the subject
 
 ## Relevant links
 
