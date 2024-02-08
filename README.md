@@ -42,7 +42,7 @@ find .dotfiles -name ".DS_Store" -depth -exec rm -f {} \;
 
 ## Relevant links
 
-Learn more—like how to use a custom ignore list, or handle conflicting files—by checkout out **Dreams of Autonomy's** [video on the **GNU Stow**](https://youtu.be/y6XCebnB9gs).
+Learn more—like how to use a custom ignore list, or handle conflicting files—by checkout out **Dreams of Autonomy's** [video on **GNU Stow**](https://youtu.be/y6XCebnB9gs).
 
 - [**~/.dotfiles** in 100 Seconds](https://youtu.be/r_MpUP6aKiQ)
 - [What is a **Dotfile** and How to Create it?](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
