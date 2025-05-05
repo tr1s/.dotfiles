@@ -18,7 +18,9 @@ background = #181A1F
 foreground = #b6c0d4
 selection-background = #313244
 selection-foreground = #ffffff
-cursor-color = #ff0000
+cursor-style = "bar"
+cursor-style-blink = true
+cursor-color = "#E6E6FA"
 
 # Smoother resizing
 resize-overlay-duration = 0s 200ms
