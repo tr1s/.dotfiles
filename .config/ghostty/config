@@ -12,13 +12,7 @@ font-family = Iosevka
 window-padding-x = 8
 window-padding-y = 9
 
-# Cursor style: block, underline, or bar
-cursor-style = bar
-
-# To disable programming ligatures (optional)
-# font-feature = -calt,-liga,-dlig
-
-
+# Theme
 theme = catppuccin-mocha
 background = #181A1F
 foreground = #b6c0d4
@@ -26,11 +20,5 @@ selection-background = #313244
 selection-foreground = #ffffff
 cursor-color = #ff0000
 
-# Scrollback lines for longer history
-scrollback-limit = 10000
-
 # Smoother resizing
 resize-overlay-duration = 0s 200ms
-
-# Optional: always show tab bar (if supported)
-# tab-bar = always
