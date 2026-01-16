@@ -28,7 +28,7 @@ error_symbol = '[→](bold red)'  # Change this to your preferred color
 style = "bold blue"
 
 truncation_length = 1
-truncation_symbol = '.../'
+truncation_symbol = ''
 
 [directory.substitutions]
 "~/Sites/work/orium.com/" = "o"

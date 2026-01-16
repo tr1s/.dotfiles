@@ -8,19 +8,37 @@
 # Font settings
 font-family = Iosevka
 
+# Initial window size (cells) and position (pixels)
+# Left edge and top of screen
+window-width = 100
+window-height = 100
+window-position-x = 0
+window-position-y = 0
+
 # Window padding for a modern look
 window-padding-x = 8
 window-padding-y = 9
 
 # Theme
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 background = #181A1F
 foreground = #b6c0d4
 selection-background = #313244
 selection-foreground = #ffffff
 cursor-style = "bar"
 cursor-style-blink = true
-cursor-color = "#E6E6FA"
+cursor-color = "#F38BA8"
+
+
 
 # Smoother resizing
-resize-overlay-duration = 0s 200ms
+resize-overlay = always
+resize-overlay-duration = 150ms
+
+# Transparency/blur (optional; adjust or remove if you prefer opaque)
+background-opacity = 0.97
+background-blur = 2
+
+# Shell integration (nice quality-of-life)
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
