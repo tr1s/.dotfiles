@@ -6,6 +6,9 @@ export EDITOR=cursor
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Plugins
+plugins=(git zsh-nvm zsh-syntax-highlighting)
+
 # Oh My Zsh Initialization
 # ------------------------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
@@ -15,9 +18,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Theme (currently using starship prompt instead of zsh-theme)
 # ZSH_THEME=""
-
-# Plugins
-plugins=(git zsh-nvm zsh-syntax-highlighting)
 
 # Aliases
 alias update="source ~/.zshrc"  # Reload ZSH configuration
