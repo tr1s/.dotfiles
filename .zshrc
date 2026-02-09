@@ -38,6 +38,8 @@ alias ls="gls --color=auto --group-directories-first"
 alias lsa="gls -lah --color=auto --group-directories-first"
 alias updatepackages="npx npm-check-updates -u"
 alias updatenpm="nvm install-latest-npm"
+alias unlighthouse="npx unlighthouse --site example.com"
+
 
 
 # Functions & Hooks
