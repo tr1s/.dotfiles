@@ -15,9 +15,6 @@ window-height = 100
 window-position-x = 0
 window-position-y = 0
 
-macos-titlebar-style = transparent
-macos-titlebar-blur = true
-
 # Window padding for a modern look
 window-padding-x = 8
 window-padding-y = 9
