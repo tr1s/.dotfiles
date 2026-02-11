@@ -15,19 +15,18 @@ window-height = 100
 window-position-x = 0
 window-position-y = 0
 
+macos-titlebar-style = transparent
+macos-titlebar-blur = true
+
 # Window padding for a modern look
 window-padding-x = 8
 window-padding-y = 9
 
 # Theme
-theme = Catppuccin Mocha
-background = #181A1F
-foreground = #b6c0d4
-selection-background = #313244
-selection-foreground = #ffffff
-cursor-style = "bar"
+# theme = Monokai Pro
+theme = Elegant
+cursor-style = bar
 cursor-style-blink = true
-cursor-color = "#F38BA8"
 
 
 
