@@ -35,14 +35,14 @@ truncation_symbol = ''
 "/Users/tris/Sites/personal/tris-next/" = "t"
 
 [git_branch]
-symbol = "🎋"
+symbol = "🌳 "
 
 # Shows current git status
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
 style = 'bold green'
 conflicted = '🏳'
-up_to_date = '[✔︎](bold white)'
+up_to_date = '[✔︎](bold green)'
 untracked = ' 🚧'
 ahead = '⇡${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'
@@ -64,7 +64,7 @@ detect_folders = []
 detect_extensions = []
 
 [bun]
-format = 'via [🐰$version](bold cyan)'
+format = 'via [🐰 $version](bold blue)'
 detect_files = ["bun.lock"]
 detect_folders = []
 detect_extensions = []
