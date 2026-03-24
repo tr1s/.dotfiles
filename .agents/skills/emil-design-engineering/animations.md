@@ -1,45 +1,8 @@
----
-name: web-animation-design
-description: Design and implement web animations that feel natural and purposeful. Use this skill proactively whenever the user asks questions about animations, motion, easing, timing, duration, springs, transitions, or animation performance. This includes questions about how to animate specific UI elements, which easing to use, animation best practices, or accessibility considerations for motion. Triggers on: easing, ease-out, ease-in, ease-in-out, cubic-bezier, bounce, spring physics, keyframes, transform, opacity, fade, slide, scale, hover effects, microinteractions, Framer Motion, React Spring, GSAP, CSS transitions, entrance/exit animations, page transitions, stagger, will-change, GPU acceleration, prefers-reduced-motion, modal/dropdown/tooltip/popover/drawer animations, gesture animations, drag interactions, button press feel, "feels janky", "make it smooth".
----
+# Animations
 
-# Web Animation Design
+Based on Emil Kowalski's "Animations on the Web" course.
 
-A comprehensive guide for creating animations that feel right, based on Emil Kowalski's "Animations on the Web" course.
-
-## Initial Response
-
-When this skill is first invoked without a specific question, respond only with:
-
-> I'm ready to help you with animations based on Emil Kowalski's animations.dev course.
-
-Do not provide any other information until the user asks a question.
-
-## Review Format (Required)
-
-When reviewing animations, you MUST use a markdown table. Do NOT use a list with "Before:" and "After:" on separate lines. Always output an actual markdown table like this:
-
-| Before                            | After                                           |
-| --------------------------------- | ----------------------------------------------- |
-| `transform: scale(0)`             | `transform: scale(0.95)`                        |
-| `animation: fadeIn 400ms ease-in` | `animation: fadeIn 200ms ease-out`              |
-| No reduced motion support         | `@media (prefers-reduced-motion: reduce) {...}` |
-
-Wrong format (never do this):
-
-```
-Before: transform: scale(0)
-After: transform: scale(0.95)
-────────────────────────────
-Before: 400ms duration
-After: 200ms
-```
-
-Correct format: A single markdown table with | Before | After | columns, one row per issue.
-
-## Quick Start
-
-Every animation decision starts with these questions:
+## Quick Decision
 
 1. **Is this element entering or exiting?** → Use `ease-out`
 2. **Is an on-screen element moving?** → Use `ease-in-out`
@@ -89,7 +52,6 @@ transition: background-color 150ms ease;
 ### linear (Avoid in UI)
 
 Only use for:
-
 - Constant-speed animations (marquees, tickers)
 - Time visualization (hold-to-delete progress indicators)
 
@@ -99,64 +61,56 @@ Linear feels robotic and unnatural for interactive elements.
 
 **Avoid for UI animations.** Makes interfaces feel sluggish because the slow start delays visual feedback.
 
-### Paired Elements Rule
+## Paired Elements Rule
 
 Elements that animate together must use the same easing and duration. Modal + overlay, tooltip + arrow, drawer + backdrop—if they move as a unit, they should feel like a unit.
 
 ```css
 /* Both use the same timing */
-.modal {
-  transition: transform 200ms ease-out;
-}
-.overlay {
-  transition: opacity 200ms ease-out;
-}
+.modal { transition: transform 200ms ease-out; }
+.overlay { transition: opacity 200ms ease-out; }
 ```
-
-## Timing and Duration
 
 ## Duration Guidelines
 
-| Element Type                      | Duration  |
-| --------------------------------- | --------- |
-| Micro-interactions                | 100-150ms |
+| Element Type | Duration |
+| --- | --- |
+| Micro-interactions | 100-150ms |
 | Standard UI (tooltips, dropdowns) | 150-250ms |
-| Modals, drawers                   | 200-300ms |
+| Modals, drawers | 200-300ms |
+| Page transitions | 300-400ms |
 
 **Rules:**
 - UI animations should stay under 300ms
 - Larger elements animate slower than smaller ones
-- Exit animations can be ~20% faster than entrance
-- Match duration to distance - longer travel = longer duration
+- Exit animations can be faster than entrances
+- Longer travel distance = longer duration
 
-### The Frequency
+## The Frequency Principle
 
 Determine how often users will see the animation:
 
 - **100+ times/day** → No animation (or drastically reduced)
 - **Occasional use** → Standard animation
-- **Rare/first-time** → Can be more special
+- **Rare/first-time** → Can be special
 
-**Example:** Raycast never animates because users open it hundreds of times a day.
+**Example:** Raycast never animates its menu toggle because users open it hundreds of times daily.
 
 ## When to Animate
 
 **Do animate:**
-
 - Enter/exit transitions for spatial consistency
 - State changes that benefit from visual continuity
 - Responses to user actions (feedback)
 - Rarely-used interactions where delight adds value
 
 **Don't animate:**
-
 - Keyboard-initiated actions
 - Hover effects on frequently-used elements
 - Anything users interact with 100+ times daily
 - When speed matters more than smoothness
 
 **Marketing vs. Product:**
-
 - Marketing: More elaborate, longer durations allowed
 - Product: Fast, purposeful, never frivolous
 
@@ -204,7 +158,6 @@ Springs maintain velocity when interrupted—CSS animations restart from zero. T
 Only animate `transform` and `opacity`. These skip layout and paint stages, running entirely on the GPU.
 
 **Avoid animating:**
-
 - `padding`, `margin`, `height`, `width` (trigger layout)
 - `blur` filters above 20px (expensive, especially Safari)
 - CSS variables in deep component trees
@@ -219,7 +172,6 @@ Only animate `transform` and `opacity`. These skip layout and paint stages, runn
 ```
 
 **React-specific:**
-
 - Animate outside React's render cycle when possible
 - Use refs to update styles directly instead of state
 - Re-renders on every frame = dropped frames
@@ -243,8 +195,6 @@ Only animate `transform` and `opacity`. These skip layout and paint stages, runn
 
 ## Accessibility
 
-Animations can cause motion sickness or distraction for some users.
-
 ### prefers-reduced-motion
 
 Whenever you add an animation, also add a media query to disable it:
@@ -265,7 +215,7 @@ Whenever you add an animation, also add a media query to disable it:
 
 - Every animated element needs its own `prefers-reduced-motion` media query
 - Set `animation: none` or `transition: none` (no `!important`)
-- No exceptions for opacity or color - disable all animations
+- No exceptions for opacity or color—disable all animations
 - Show play buttons instead of autoplay videos
 
 ### Framer Motion Implementation
@@ -285,50 +235,32 @@ function Component() {
 }
 ```
 
-### Touch Device Considerations
-
-```css
-/* Disable hover animations on touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .element:hover {
-    transform: scale(1.05);
-  }
-}
-```
-
-Touch devices trigger hover on tap, causing false positives.
-
 ## Practical Tips
 
-Quick reference for common scenarios. See [PRACTICAL-TIPS.md](PRACTICAL-TIPS.md) for detailed implementations.
+| Scenario | Solution |
+| --- | --- |
+| Make buttons feel responsive | Add `transform: scale(0.97)` on `:active` |
+| Element appears from nowhere | Start from `scale(0.95)`, not `scale(0)` |
+| Shaky/jittery animations | Add `will-change: transform` |
+| Hover causes flicker | Animate child element, not parent |
+| Popover scales from wrong point | Set `transform-origin` to trigger location |
+| Sequential tooltips feel slow | Skip delay/animation after first tooltip |
+| Small buttons hard to tap | Use 44px minimum hit area (pseudo-element) |
+| Something still feels off | Add subtle blur (under 20px) to mask it |
+| Hover triggers on mobile | Use `@media (hover: hover) and (pointer: fine)` |
 
-| Scenario                        | Solution                                        |
-| ------------------------------- | ----------------------------------------------- |
-| Make buttons feel responsive    | Add `transform: scale(0.97)` on `:active`       |
-| Element appears from nowhere    | Start from `scale(0.95)`, not `scale(0)`        |
-| Shaky/jittery animations        | Add `will-change: transform`                    |
-| Hover causes flicker            | Animate child element, not parent               |
-| Popover scales from wrong point | Set `transform-origin` to trigger location      |
-| Sequential tooltips feel slow   | Skip delay/animation after first tooltip        |
-| Small buttons hard to tap       | Use 44px minimum hit area (pseudo-element)      |
-| Something still feels off       | Add subtle blur (under 20px) to mask it         |
-| Hover triggers on mobile        | Use `@media (hover: hover) and (pointer: fine)` |
+## Theme Transitions
 
-## Easing Decision Flowchart
+**Important:** Switching themes should not trigger transitions and animations on elements. Disable transitions during theme changes to prevent flash of animated content.
 
-Is the element entering or exiting the viewport?
-├── Yes → ease-out
-└── No
-├── Is it moving/morphing on screen?
-│ └── Yes → ease-in-out
-└── Is it a hover change?
-├── Yes → ease
-└── Is it constant motion?
-├── Yes → linear
-└── Default → ease-out
+## AnimatePresence
 
-## Reference Files
+Use `popLayout` mode on AnimatePresence when an element has an exit animation and is in a group of elements.
 
-- [PRACTICAL-TIPS.md](PRACTICAL-TIPS.md) - Detailed implementations for common animation scenarios
+## Drag Gestures
 
----
+When implementing drag-to-dismiss or similar gestures, ensure velocity-based swiping works. Usually velocity (`swipeAmount / timeTaken`) higher than `0.10` should be sufficient to trigger the action.
+
+## Looping Animations
+
+Pause looping animations when off-screen to save resources.
