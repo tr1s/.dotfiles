@@ -42,10 +42,18 @@
     "findSkillsPrompt": true
   },
   "lastSelectedAgents": [
-    "claude-code",
+    "amp",
+    "antigravity",
+    "cline",
     "codex",
-    "openclaw",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
     "opencode",
-    "cursor"
+    "warp",
+    "claude-code",
+    "openclaw"
   ]
 }
