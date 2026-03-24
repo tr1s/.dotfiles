@@ -2,7 +2,7 @@
 # ------------------------------------------------------------------------------
 
 export ZSH=$HOME/.oh-my-zsh
-export EDITOR=cursor
+export EDITOR="code --wait"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
@@ -29,17 +29,18 @@ alias cstart="cursor . && bun run dev"
 alias nvmstart="nvm use && cursor . && npm run dev"
 alias sstart="bun run sanity"
 alias bd="bun run dev"
-alias code="cursor"
 alias bo="bun outdated"
 alias cbd="cursor . && bun run dev"
 alias nd="npm run dev"
 alias cnd="code . && npm run dev"
 alias bl="brew list"
-alias ls="gls --color=auto --group-directories-first"
-alias lsa="gls -lah --color=auto --group-directories-first"
+# alias ls="gls --color=auto --group-directories-first"
+# alias lsa="gls -lah --color=auto --group-directories-first"
 alias updatepackages="npx npm-check-updates -u"
 alias updatenpm="nvm install-latest-npm"
 alias unlighthouse="npx unlighthouse --site example.com"
+alias danger="claude --dangerously-skip-permissions"
+alias doubledanger="claude --add-dir ~/Sites/personal/tris-next --dangerously-skip-permissions"
 
 
 
