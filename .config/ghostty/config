@@ -21,7 +21,8 @@ window-padding-y = 9
 
 # Theme
 # theme = Monokai Pro
-theme = Elegant
+theme = Doom One
+background = 1F1F1F
 cursor-style = bar
 cursor-style-blink = true
 
