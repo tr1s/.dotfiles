@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias update="source ~/.zshrc"  # Reload ZSH configuration
 alias bb='brew update; brew upgrade; brew cleanup; brew doctor'
+alias bbc='brew update; brew upgrade --cask --greedy; brew cleanup'
 alias c="clear"
 alias cd="z"
 alias start="bun run dev"
